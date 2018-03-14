@@ -1,4 +1,4 @@
-# FAVOURITES.VIM
+# FZF-BOOKMARK.vim
 
 This plugin helps us finding sepecific files in favourite or bookmarked directories.
 
@@ -13,7 +13,7 @@ You should also have [fzf-vim](https://github.com/junegunn/fzf.vim) plugin insta
 If you use [vim-plug](https://github.com/junegunn/vim-plug), add this line to your list of plugins:
 
 ```
-Plug 'tiagoinacio/favourites.vim'
+Plug 'tiagoinacio/fzf-bookmark.vim'
 ```
 
 And then:
@@ -22,12 +22,15 @@ And then:
 :PlugInstall
 ```
 
-This plugin relies on a favourites / bookmark file which lists all the favourites directories.
+If you want to specify the directories that you want exactly, instead of using that helper script, you can create a file with the name `fzf_bookmarks` and put it under your home directory.
 
-If you use `ZSH`, just source the `favourites.zsh` file from your `.zshrc`.
+Then add the favorites diretories listed line by line:
 
 ```
-echo >> "source ~/.vim/plugged/favourites.vim/plugin/favourites.zsh"
+~/Work/
+~/Another-Directory/
+/etc/bin
+~/.vim
 ```
 
 # Usage
@@ -51,5 +54,23 @@ After this, we will have a `~/.fzf_favorites` file.
 Then just open vim, and run the commands:
 
 `<leader>fa` - open all files from directory (including non git files)
+
 `<leader>fg` - open all files from directory (only git files)
+
 `<leader>fp` - change directory to a specific favorite directory
+
+## TODO
+
+[ ] - add bash script
+
+[ ] - improve documentation
+
+[ ] - separate favourites.vim and fzf + favorites file creation in diffent repos
+
+[ ] - add configuration to choose the favorites file path and name
+
+[ ] - add functions to add directories, remove directories or change directories from file
+
+[ ] - add function to remove file
+
+[ ] - add custom commands to align with the mappings

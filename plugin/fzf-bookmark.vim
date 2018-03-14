@@ -1,8 +1,8 @@
-if exists('g:favouritesvim_loaded')
+if exists('g:fzf_bookmark_loaded')
     finish
 endif
 
-let g:favouritesvim_loaded = 1
+let g:fzf_bookmark_loaded = 1
 
 function! s:ChangeDirectory(path)
     exec "cd ".a:path
@@ -27,7 +27,7 @@ function! ListFavorites(path)
         \ })
 endfunction
 
-if !exists('g:favouritesvim_mappings')
+if !exists('g:bookmarkvim_mappings')
     nnoremap <silent> <Leader>fg :call ListFavorites('s:OpenGitFiles')<cr>
     nnoremap <silent> <Leader>fa :call ListFavorites('s:OpenAllFiles')<cr>
     nnoremap <silent> <Leader>fp :call ListFavorites('s:ChangeDirectory')<cr>
