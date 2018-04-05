@@ -1,5 +1,5 @@
 if exists('g:fzf_bookmark_loaded')
-    finish
+   finish
 endif
 
 let g:fzf_bookmark_loaded = 1
@@ -27,8 +27,12 @@ function! ListFavorites(path)
         \ })
 endfunction
 
+command BMGitFiles execute "call ListFavorites('s:OpenGitFiles')"
+command BMFiles execute "call ListFavorites('s:OpenAllFiles')"
+command BMChangeDirectory execute "call ListFavorites('s:ChangeDirectory')"
+
 if !exists('g:bookmarkvim_mappings')
-    nnoremap <silent> <Leader>fg :call ListFavorites('s:OpenGitFiles')<cr>
-    nnoremap <silent> <Leader>fa :call ListFavorites('s:OpenAllFiles')<cr>
-    nnoremap <silent> <Leader>fp :call ListFavorites('s:ChangeDirectory')<cr>
+    nnoremap <silent> <Leader>fg :BMGitFiles<cr>
+    nnoremap <silent> <Leader>fa :BMFiles<cr>
+    nnoremap <silent> <Leader>fp :BMChangeDirectory<cr>
 endif
