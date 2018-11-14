@@ -22,7 +22,7 @@ endfunction
 
 function! ListFavorites(path)
     call fzf#run({
-        \   'source': 'cat $HOME/.fzf_favorites',
+        \   'source': 'cat $FZFBOOKMARKS',
         \   'sink': function(a:path)
         \ })
 endfunction
